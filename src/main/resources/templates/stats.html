@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Estadísticas</title>
+</head>
+<body>
+
+<h1>Estadísticas</h1>
+
+<p><strong>Total de items:</strong> <span th:text="${totalItems}"></span></p>
+
+<h2>Items con stock bajo (&lt; 100)</h2>
+<ul>
+    <li th:each="item : ${lowCountItems}">
+        <span th:text="${item.title}"></span> -
+        <span th:text="${item.count}"></span>
+    </li>
+</ul>
+
+<h2>Fabricantes</h2>
+<ul>
+    <li th:each="m : ${manufacturers}" th:text="${m}"></li>
+</ul>
+
+<br>
+<a href="/items">Volver</a>
+
+</body>
+</html>

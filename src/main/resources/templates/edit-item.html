@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Item</title>
+</head>
+<body>
+
+<h1>Editar Item</h1>
+
+<form th:action="@{/items/{id}/edit(id=${item.id})}" method="post">
+    <label>Título:</label>
+    <input type="text" name="title" th:value="${item.title}" required>
+    <br><br>
+
+    <label>Categoría:</label>
+    <input type="text" name="category" th:value="${item.category}">
+    <br><br>
+
+    <label>Cantidad:</label>
+    <input type="number" name="count" th:value="${item.count}">
+    <br><br>
+
+    <label>Fabricante:</label>
+    <input type="text" name="manufacturer" th:value="${item.manufacturer}">
+    <br><br>
+
+    <button type="submit">Guardar cambios</button>
+</form>
+
+<br>
+<a href="/items">Volver</a>
+
+</body>
+</html>

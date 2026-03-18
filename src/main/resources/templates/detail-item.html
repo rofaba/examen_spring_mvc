@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle Item</title>
+</head>
+<body>
+
+<h1>Detalle del Item</h1>
+
+<p><strong>ID:</strong> <span th:text="${item.id}"></span></p>
+<p><strong>Nombre:</strong> <span th:text="${item.title}"></span></p>
+<p><strong>Precio:</strong> <span th:text="${item.price}"></span></p>
+<p><strong>Fabricante:</strong> <span th:text="${item.manufacturer}"></span></p>
+<p><strong>Categoria:</strong> <span th:text="${item.category}"></span></p>
+<p><strong>Descripcion:</strong> <span th:text="${item.description}"></span></p>
+<img th:src="${item.image}" alt="Imagen del item" style="max-width: 300px;">
+<br>
+<a th:href="@{/items/{id}/edit(id=${item.id})}">Editar</a>
+<br>
+<a href="/items">Volver a la lista</a>
+
+</body>
+</html>
