@@ -24,6 +24,12 @@
 </ul>
 
 <br>
+
+<div class="respuesta" th:if="${respuesta}">
+    <h2>Respuesta</h2>
+    <div th:utext="${respuesta}"></div>
+</div>
+
 <a href="/items">Volver</a>
 
 </body>
